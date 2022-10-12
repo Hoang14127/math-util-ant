@@ -11,23 +11,11 @@ import static com.hoangnd.mathutil.core.MathUtil.getFactorial;
 
 public class MathUtilsDDTTest {
 
-    //Bộ data là mảng 2 chiều ứng với 
-    // 2 cột với ecpected và n
-    // Dòng ứng với các test case
-    //Mảng Object, thì dùng Wrapper class- class gọi cá primitive
-    // Integer -> int , Long -> long 
+   
     @Parameterized.Parameters
     public static Object[][] initData() {
-        int a[] = {5, 10, 15, 20}; // Liệt je6 các phần tử bằng dấu phẩy 
+        int a[] = {5, 10, 15, 20}; 
         int b[][] = {{1, 0}, {1, 1}, {2, 2}, {3, 6}, {4, 24}, {5, 120}, {6, 720}};
-//        int c[][] = {{1, 0},
-//                     {1, 1},
-//                     {2, 2},
-//                     {3, 6},
-//                     {4, 24},
-//                     {5, 120},
-//                     {6, 720}
-//            }; 
 
         return new Integer[][]{{1, 0},
         {1, 1},
@@ -38,25 +26,27 @@ public class MathUtilsDDTTest {
         {720, 6}
         };
         
-        // Ta sẽ map ánh xạ các cột của mỗi dòng ví dụ dòng đầu tiên có 2 cật 
-        // là 1 0 ta ánh xạ 1 vào biến expected 0 vào biến n và tương
-        //tự các cột còn lại 
+        
     }
         
         
         @Parameterized.Parameter(value = 0)
-        public long expected; // map vào cột 0 của mảng 
+        public long expected;  
         @Parameterized.Parameter(value = 1)
-        public int n;// Map vào cột 1 của mảng
+        public int n;
                 
-        @Test // kiểm thử các test case với data tách ra từ mảng 
+        @Test 
         
         public void testFactorialGivenRightArgumentReturnWell(){
-            assertEquals(expected, MathUtil.getFactorial(n)); // chỉ import static mới ko có chấm 
+            assertEquals(expected, MathUtil.getFactorial(n));
         }
     
 
 }
+
+
+
+
 
 //Phân tích cách ta viết code cho việc test hàm getF() hôm trước
 // Assert.assertEquals, mathutil.getFacturial lệnh dùng để test 
