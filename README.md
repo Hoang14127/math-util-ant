@@ -5,7 +5,7 @@
 * The MathUtil.java class-a replication version of the famous JDK's util class-Math
 * Ant build script goes with JUnit Test verification
 * Unit Test script using JUnit framework
-*....
+* ....
 
 #### Conect me via ngusimeri@gmail.com
 
