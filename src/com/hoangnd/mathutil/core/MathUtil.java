@@ -16,6 +16,17 @@ package com.hoangnd.mathutil.core;
 public class MathUtil {
 
     public static final double PI = 3.14159;
+    // n! = n*(n-1)! => công thức đệ quy 
+    // Đệ quy : gọi ới bản thân vs quy mô nhỏ hơn 
+    //
+    public static long getFactorial(int n) {
+
+        if (n < 0 || n > 20) 
+            throw new IllegalArgumentException("Invalid n , n must be in 0..20");
+        
+        return n * getFactorial(n-1);
+        
+    }
 
     //Hàm tiện ích tính n! = 1.2.3.4...n
     //Lưu ý / quy ước 
@@ -23,26 +34,26 @@ public class MathUtil {
     //Vì giai thuc tăng cực nhanh nên 21! vượt 18 số
     //Tràn kiểu long 
     //Ta ko tính 21!trở lên
-    public static long getFactorial(int n) {
-
-        if (n < 0 || n > 20) 
-            throw new IllegalArgumentException("Invalid n , n must be in 0..20");
-        
-        if (n == 0 || n == 1) 
-            return 1;
-        
-        
-        //sống đến đây, sure n = 2..20
-        //cấm ko xài else nữa khi hàm đã có rerturn phía trước 
-        long product = 1; 
-        // biến cộng dồn nhân dồn , biên con heo đất 
-        // acc / accumulation/ gói gộp 
-        for (int i = 2; i <= n; i++) 
-            product *= i;
-            
-        return product;
-        
-    }
+//    public static long getFactorial(int n) {
+//
+//        if (n < 0 || n > 20) 
+//            throw new IllegalArgumentException("Invalid n , n must be in 0..20");
+//        
+//        if (n == 0 || n == 1) 
+//            return 1;
+//        
+//        
+//        //sống đến đây, sure n = 2..20
+//        //cấm ko xài else nữa khi hàm đã có rerturn phía trước 
+//        long product = 1; 
+//        // biến cộng dồn nhân dồn , biên con heo đất 
+//        // acc / accumulation/ gói gộp 
+//        for (int i = 2; i <= n; i++) 
+//            product *= i;
+//            
+//        return product;
+//        
+//    }
 }
 //CODING CONVETION: QUY TẮC VIẾT CODE CTY ÉP PHẢI THEO !!!!
 // ALT + SHIFT + F căn code tự dộng , ko lạm dụng 
